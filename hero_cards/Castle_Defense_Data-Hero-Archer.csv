@@ -1,0 +1,6 @@
+﻿ID,Name,Range,Rules,Cost
+1,Shoot,Any,2 damage to 1 enemy,1
+2,Notch,-,next turn gain 1 energy,2
+3,Volley,Any,1 damage to all in selected range,3
+4,Tracking Shot,Far,1 damage to 1 enemy; add archer token to enemy,2
+5,Rapid Fire,Any,2 damage to 3 enemies,2

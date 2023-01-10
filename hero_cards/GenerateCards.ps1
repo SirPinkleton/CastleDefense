@@ -1,19 +1,4 @@
-﻿function csvExists($fileToCheck)
-{
-    $listOfCurrentCsvs = Get-ChildItem | Where-Object {$_.FullName -match ".csv"}
-    foreach ($file in $listOfCurrentCsvs)
-    {
-        $fileName = $file.Name
-        Write-Host "###checking if '$fileName' is equal to '$fileToCheck'"
-        if($fileName -eq $fileToCheck)
-        {
-            return $true
-        }
-    }
-    return $false
-}
-
-
+﻿
 #remove all old output folders
 Write-Host "removing old output folders"
 Write-Host "+++++++++++++++++++++++++++"
@@ -38,39 +23,28 @@ foreach ($cardDocument in $listOfCardDocuments)
     Write-Host "working on $cardDocument"
     Write-Host "+++++++++++++++++++++++++++++++++"
 
-    $csvNameOfDocument = $cardDocument.Name
-    Write-Host "__csv version of input file: $csvNameOfDocument"
-
-    if(csvExists($csvNameOfDocument))
+    
+    Write-Host "executing ruby script on the generated csv..."
+    Write-Host "#"
+    ruby generate-herocards.rb $cardDocument
+    Write-Host "#"
+    Write-Host "Finished calling ruby script"
+    Write-Host ""
+    
+    $outputDirName = resolve-path _output -ErrorAction SilentlyContinue
+    if(test-path $outputDirName)
     {
-        Write-Host "executing ruby script on the generated csv"
-        Write-Host "++++++++++++++++++++++++++++++++++++++++++"
-        ruby generate-herocards.rb $csvNameOfDocument
-
-        $xlsxNameOfDocument -match "_Data-(?<content>.*).xlsx"
+        Write-Host "____output folder generated, renaming it for parsability"
+        $cardDocument -match "_Data-(?<content>.*).csv" | Out-Null
         $docShortName = $matches['content']
+        $newOutputDirName = $outputDirName -replace "_output","_output-$docShortName"
 
-        $outputDirName = resolve-path _output -ErrorAction SilentlyContinue
-        if(test-path $outputDirName)
-        {
-            Write-Host "____output folder generated, renaming it for parsability"
-            $newOutputDirName = $outputDirName -replace "_output","_output-$docShortName"
-
-            #rename folder
-            rename-item $outputDirName $newOutputDirName
-        }
-        else
-        {
-            Write-Host "____output folder not generated"
-            $failureFound = $true
-        }
-        #delete old csv
-        Write-Host "____removing old csv"
-        remove-item $csvNameOfDocument
+        #rename folder
+        rename-item $outputDirName $newOutputDirName
     }
     else
     {
-        Write-Host "____failed to generate csv"
+        Write-Host "____output folder not generated"
         $failureFound = $true
     }
     Write-Host "--------------------"

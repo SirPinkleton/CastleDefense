@@ -1,0 +1,7 @@
+﻿ID,Name,Range,Rules,Cost
+1,Bolster,-,apply 1 wall token,1
+2,Caltrops,Any,aplace caltrop token,1
+3,Ballista shot,-,5 damage to 1 enemy at close; 4 damage to 1 enemy at medium; 3 damage to 1 enemy at far,3
+4,Upgrade,-,Boosts all damage for an ally by 1 for 1 round,2
+5,Build a Tower,-,tap card; next round spend energy again to untap; gain a tower which does 1 damage to 5 enemies at medium and close range,4
+6,Boiling Oil,Close,deal 1 damage to all enemies in range,3; tap

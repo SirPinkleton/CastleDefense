@@ -82,29 +82,26 @@ fromTopLeftSafeToMargin:
 ### Text Specification ###
 # Need to specify the font size, x co-ords, width, height, and alignment of all the text
 
-## Top Ability Section
-
-icon:
-  extends: iconsWidthHeight
+## generic rules
   
 title:
   height: 100
   align: center
-  font_size: 10
-  #font: 'Benne Regular, arial'
-  font: 'Benne-Regular, arial'
+  font: 'Garamond 10'
 
 variables:
-  font_size: 7.5
   height: 140
-  font: 'Benne-Regular, arial'
+  font: 'Garamond 7.5'
   
 rules:
   extends: widthSafeArea
   height: 500
-  font_size: 7.5
   width: -= 40
-  font: 'Benne-Regular, arial'
+  font: 'Garamond 7.5'
+  
+## specific rules
+  
+  
   
 ttitle:
   extends: 
@@ -116,22 +113,9 @@ ttitle:
   align: center
   width: -= 40
   
-#topWeaponOrInfluence:
-#  extends:
-#   - topTarget
-#   - iconsWidthHeight
-#  y: += 60
-  
-vvariables:
-  extends:
-   - ttitle
-   - variables
-  y: += 120
-  color: :black
-  
 rrules:
   extends: 
-   - vvariables
+   - ttitle
    - rules
   y: += 170
   color: :black
@@ -139,20 +123,27 @@ rrules:
 ccostTitle:
   extends: 
    - rrules
-   - variables
   y: += 520
   height: 70
   color: :black
   align: left
-  
+
 ccost:
   extends: 
    - ccostTitle
+   - variables
   x: += 60
   height: 70
   width: -= 60
   color: :black
   align: center
+  
+rrange:
+  extends:
+   - ccost
+  y: += 100
+  color: :black
+  
   
 
 
