@@ -5,7 +5,7 @@ require 'game_icons'
 if ARGV[0].nil?
   output = "no argument given, using default, Castle_Defense_Data-Heros.csv\n"
   print output
-  data = Squib.csv file: 'Castle_Defense_Data-Heros.csv'
+  data = Squib.csv file: 'Castle_Defense_Data-Hero-Archer.csv'
   print output
 else
   output = "using argument, " + ARGV[0] + "\n"
@@ -46,7 +46,7 @@ Squib::Deck.new(dpi: 300, width: 750, height: 1050, cards: data['Name'].size, la
 
   ## output file stuff
 
-  save_png prefix: 'ttconsc_'
+  save_png prefix: 'archer_card_'
   #save_pdf trim: 37.5
 end
 
