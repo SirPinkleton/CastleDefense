@@ -1,0 +1,10 @@
+﻿ID,Name,Range,Rules,Cost
+1,Brew,Medium & Close,"tap; next turn, untap and deal 1 damage to all enemies in range",3
+2,Fireball,Medium,3 damage to 2 enemies,2
+3,Spectral Warriors,Short,2 damage to 4 enemies,3
+4,Freeze Spell,Medium,1 damage to 1 enemy; tap enemy,3
+5,Energy well,-,"when untapped, gives 3 energy",3; tap
+6,Light Beam,Close,6 damage to 1 enemy,3
+7,Chain Lightening,Medium,Spread 8 damage across any number of enemies,4
+8,Meteor,Medium or Short,deal 5 damage to all enemies in area; if cast at close range deal 5 damage to wall,5
+9,Sluggish Concoction,Medium,1 weaken token to 1 enemy,4
