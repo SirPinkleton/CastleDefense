@@ -24,17 +24,19 @@ foreach ($cardDocument in $listOfCardDocuments)
     Write-Host "+++++++++++++++++++++++++++++++++"
 
     
-    Write-Host "executing ruby script on the generated csv"
-    Write-Host "++++++++++++++++++++++++++++++++++++++++++"
-    ruby generate-herocards.rb $csvNameOfDocument
-
-    $matchedNameOfDocument -match "_Data-(?<content>.*).csv"
-    $docShortName = $matches['content']
-
+    Write-Host "executing ruby script on the generated csv..."
+    Write-Host "#"
+    ruby generate-herocards.rb $cardDocument
+    Write-Host "#"
+    Write-Host "Finished calling ruby script"
+    Write-Host ""
+    
     $outputDirName = resolve-path _output -ErrorAction SilentlyContinue
     if(test-path $outputDirName)
     {
         Write-Host "____output folder generated, renaming it for parsability"
+        $cardDocument -match "_Data-(?<content>.*).csv" | Out-Null
+        $docShortName = $matches['content']
         $newOutputDirName = $outputDirName -replace "_output","_output-$docShortName"
 
         #rename folder
