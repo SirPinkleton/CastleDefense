@@ -6,16 +6,16 @@ if ARGV[0].nil?
   default = "Castle_Defense_Data-Hero-Characters.csv"
   output = "no argument given, using default, " + default + "\n"
   print output
-  abilityData = Squib.csv file: default
+  characterData = Squib.csv file: default
 else
   output = "using argument, " + ARGV[0] + "\n"
   print output
-  abilityData = Squib.csv file: ARGV[0]
+  characterData = Squib.csv file: ARGV[0]
 end
 
 output = "indexing into Hero Card Name column of given csv\n"
 print output
-something = abilityData['Name']
+something = characterData['Name']
 output = "off of this index, number of cards is: "
 print output
 sizeOfSomething = something.size
@@ -24,12 +24,12 @@ print output
 output = "\n"
 print output
 
-#abilityData = Squib.csv file: 'Tactile_Tabletop_Data-Level_2_CC.csv'
+#characterData = Squib.csv file: 'Tactile_Tabletop_Data-Level_2_CC.csv'
 #grabbing icons from https://game-icons.net/
 #using gem game_icons to be able to load them
 
 #width/height/dpi measurements provided by template from BoardGameMaker.com, see poker-size.pdf
-Squib::Deck.new(dpi: 300, width: 750, height: 1050, cards: abilityData['Name'].size, layout: 'herocardabilitylayout.yml')  do
+Squib::Deck.new(dpi: 300, width: 750, height: 1050, cards: characterData['Name'].size, layout: 'herocardcharacterlayout.yml')  do
 
   ## overall card stuff
 
@@ -38,11 +38,11 @@ Squib::Deck.new(dpi: 300, width: 750, height: 1050, cards: abilityData['Name'].s
   rect layout: 'safe'
   
 
-  text str: abilityData['Name'], layout: 'ttitle'
-  text str: abilityData['Rules'], layout: 'rrules'
+  text str: characterData['Name'], layout: 'ttitle'
+  text str: characterData['Rules'], layout: 'rrules'
   text str: "Cost:", layout: 'ccostTitle'
-  text str: abilityData['Cost'], layout: 'ccost'
-  text str: abilityData['Range'], layout: 'rrange'
+  text str: characterData['Cost'], layout: 'ccost'
+  text str: characterData['Range'], layout: 'rrange'
 
   ## output file stuff
 
