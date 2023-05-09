@@ -1,0 +1,8 @@
+﻿ID,Name,Range,Rules,Cost
+1,Spear,-,3 damage to 1 enemy at close; 2 damage to 1 enemy at medium; 1 damage to 1 enemy at far,1
+2,Push,Close,Move 1 enemy from Close to Medium,2
+3,Great Sword,Close,3 damage to 3 enemies,2
+4,Shield Bash,Close,2 damage to 1 enemy; tap enemy,2
+5,Rought Enemy,Close,3 cowardice tokens to 3 enemies,3
+6,Lance,Close,tap 5 enemies,3; tap
+7,Rally,-,untap all equipment,1

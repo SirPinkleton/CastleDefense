@@ -3,7 +3,7 @@ require 'game_icons'
 
 
 if ARGV[0].nil?
-  default = "Castle_Defense_Data-Hero-Archer.csv"
+  default = "Castle_Defense_Data-Hero-Characters.csv"
   output = "no argument given, using default, " + default + "\n"
   print output
   abilityData = Squib.csv file: default
