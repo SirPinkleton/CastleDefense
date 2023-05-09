@@ -103,7 +103,7 @@ rules:
   
   
   
-ttitle:
+title:
   extends: 
    - title
    - fromTopLeftSafeToMargin
@@ -113,36 +113,15 @@ ttitle:
   align: center
   width: -= 40
   
-rrules:
+characterImage:
   extends: 
-   - ttitle
-   - rules
+   - title
   y: += 170
-  color: :black
 
-ccostTitle:
-  extends: 
-   - rrules
-  y: += 520
-  height: 70
-  color: :black
-  align: left
-
-ccost:
-  extends: 
-   - ccostTitle
-   - variables
-  x: += 60
-  height: 70
-  width: -= 60
-  color: :black
-  align: center
-  
-rrange:
+health:
   extends:
-   - ccost
-  y: += 100
-  color: :black
+   - characterImage
+  y: += 300
   
   
 
