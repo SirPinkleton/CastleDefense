@@ -26,7 +26,7 @@ foreach ($cardDocument in $listOfCardDocuments)
     
     Write-Host "executing ruby script on the generated csv..."
     Write-Host "#"
-    ruby generate-herocards.rb $cardDocument
+    ruby generate-heroabilitycards.rb $cardDocument
     Write-Host "#"
     Write-Host "Finished calling ruby script"
     Write-Host ""

@@ -38,35 +38,14 @@ Squib::Deck.new(dpi: 300, width: 750, height: 1050, cards: abilityData['Name'].s
   rect layout: 'safe'
   
 
-  text str: data['Name'], layout: 'ttitle'
-  text str: data['Rules'], layout: 'rrules'
+  text str: abilityData['Name'], layout: 'ttitle'
+  text str: abilityData['Rules'], layout: 'rrules'
   text str: "Cost:", layout: 'ccostTitle'
-  text str: data['Cost'], layout: 'ccost'
-  text str: data['Range'], layout: 'rrange'
+  text str: abilityData['Cost'], layout: 'ccost'
+  text str: abilityData['Range'], layout: 'rrange'
 
   ## output file stuff
 
-  save_png prefix: 'hero_card_'
-  #save_pdf trim: 37.5
-end
-
-Squib::Deck.new(dpi: 300, width: 750, height: 1050, cards: data['Name'].size, layout: 'herocardabilitylayout.yml')  do
-
-  ## overall card stuff
-
-  background color: 'white'
-  rect layout: 'cut'
-  rect layout: 'safe'
-  
-
-  text str: data['Name'], layout: 'ttitle'
-  text str: data['Rules'], layout: 'rrules'
-  text str: "Cost:", layout: 'ccostTitle'
-  text str: data['Cost'], layout: 'ccost'
-  text str: data['Range'], layout: 'rrange'
-
-  ## output file stuff
-
-  save_png prefix: 'hero_card_'
+  save_png prefix: 'hero_ability_card_'
   #save_pdf trim: 37.5
 end
