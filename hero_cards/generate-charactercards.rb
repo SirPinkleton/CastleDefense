@@ -29,7 +29,7 @@ print output
 #using gem game_icons to be able to load them
 
 #width/height/dpi measurements provided by template from BoardGameMaker.com, see poker-size.pdf
-Squib::Deck.new(dpi: 300, width: 750, height: 1050, cards: characterData['Name'].size, layout: 'herocardcharacterlayout.yml')  do
+Squib::Deck.new(dpi: 300, width: 750, height: 1050, cards: characterData['Name'].size, layout: 'charactercardlayout.yml')  do
 
   ## overall card stuff
 
@@ -40,7 +40,7 @@ Squib::Deck.new(dpi: 300, width: 750, height: 1050, cards: characterData['Name']
 
   text str: characterData['Name'], layout: 'title'
   text str: characterData['Health'], layout: 'health'
-  png file: characterData['image'].map {|t| "#{t.downcase}.png" }, layout: 'characterImage'
+  png file: characterData['Image'].map {|t| "#{t.downcase}.png" }, layout: 'characterImage'
 
   ## output file stuff
 
