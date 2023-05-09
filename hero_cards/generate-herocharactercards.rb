@@ -38,11 +38,9 @@ Squib::Deck.new(dpi: 300, width: 750, height: 1050, cards: characterData['Name']
   rect layout: 'safe'
   
 
-  text str: characterData['Name'], layout: 'ttitle'
-  text str: characterData['Rules'], layout: 'rrules'
-  text str: "Cost:", layout: 'ccostTitle'
-  text str: characterData['Cost'], layout: 'ccost'
-  text str: characterData['Range'], layout: 'rrange'
+  text str: characterData['Name'], layout: 'title'
+  text str: characterData['Health'], layout: 'health'
+  png file: characterData['image'].map {|t| "#{t.downcase}.png" }, layout: 'characterImage'
 
   ## output file stuff
 
