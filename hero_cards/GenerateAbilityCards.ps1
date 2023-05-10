@@ -9,7 +9,7 @@ foreach ($outputFolder in $listOfOutputFolders)
 }
 
 #generate new output folders
-$listOfCardDocuments = Get-ChildItem | Where-Object {$_.FullName -match ".csv"}
+$listOfCardDocuments = Get-ChildItem | Where-Object {$_.FullName -match "Abilities.csv"}
 write-host ""
 Write-Host "iterating over documents to generate card pngs"
 $failureFound = $false
